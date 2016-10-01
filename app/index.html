@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,26 +9,53 @@
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
      <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>	
      <link rel="stylesheet" href="css/estilo.css">
+       <link href="css/style.css" rel="stylesheet">  
+       <link rel="stylesheet" type="text/css" href="css/slick.css">
 
 </head>
 <body>
 
 	<!-- *********************************************PAGINA 1************************************************ -->
 		
-		<section id="page1" data-role="page" data-poisition="fixed">
-			
+		<section id="page1" data-role="page" data-poisition="fixed" data-theme="b">
+	
 			<header data-role="header">
 				<h1>Gaming Store 1</h1>
 			</header>
-			<article data-role="content">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto enim, sit labore optio ab omnis atque facere laborum dolorem aliquid accusamus qui, fuga nostrum voluptate! Eos reiciendis expedita minus ea!
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, quasi, quos aspernatur, nemo, molestiae natus asperiores libero aperiam laudantium reprehenderit sint sapiente quo ad aliquam necessitatibus doloribus debitis voluptas ut.
-				</p>
-				<a href="#page2" data-role="button" data-inline="true">Vamos a la página 2</a>
+
+			<article data-role="content" >
+			
+				<div class="aa-product-catg-body">
+                      <ul class="aa-product-catg">
+                        <?php
+                        $productosURL = "http://pymesv.com/datos05w/gamestoreapi/productos/lista";
+                        $variable=file_get_contents($productosURL);
+                        $variable=json_decode($variable,true);
+                        // $nombre="FIFA2017.jpg"
+                        foreach ($variable as $value) 
+                          {
+                  					
+                           // $value->client=$idUser;
+                            echo '<!-- start single product item -->
+                                      <li>
+                                        <figure>
+                                          <a class="aa-product-img" href="#"><img style="width: 250px; height: 300px;" src="http://pymesv.com/datos05w/'.$value->imagen.'" alt="game cover img"></a>
+                                          <a class="aa-add-card-btn"href="javascript:void();" data="'.htmlspecialchars(json_encode($value), ENT_QUOTES, 'UTF-8'). '"><span class="fa fa-shopping-cart"></span>Agregar al carrito</a>
+                                         
+                                        </figure>                         
+                                        <!-- product badge -->
+                                        <span class="aa-badge aa-sale" href="#">Comprar ahora!</span>
+                                      </li>';
+                          }
+                        ?>
+                </ul>
+              </div>
+			   <a href="#page2" data-role="button" data-inline="true">Vamos a la página 2</a>
 			</article>
 			<div data-role="footer" data-position="fixed"> 
-	            <h4>CopyRight@ by MorisMuñoz</h4> 
+	            <h4>CopyRight@ by MMMReyes</h4> 
            </div> 
+       
 		</section>
 
 		<!-- ********************************************* FIN PAGINA 1************************************************ -->
@@ -35,7 +63,7 @@
 
 		<!-- *********************************************PAGINA 2************************************************ -->
 		
-		<section id="page2" data-role="page" data-poisition="fixed">
+		<section id="page2" data-role="page" data-poisition="fixed" data-theme="b">
 			
 			<header data-role="header">
 				<h1>Gaming Store 2</h1>
@@ -44,14 +72,147 @@
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto enim, sit labore optio ab omnis atque facere laborum dolorem aliquid accusamus qui, fuga nostrum voluptate! Eos reiciendis expedita minus ea!
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, quasi, quos aspernatur, nemo, molestiae natus asperiores libero aperiam laudantium reprehenderit sint sapiente quo ad aliquam necessitatibus doloribus debitis voluptas ut.
 				</p>
-				<p>Esta es la Pánina 2</p>
+				<a href="#page3" data-role="button" data-inline="true">Ir a la página 3</a>
+				<a href="#page1" data-role="button" data-inline="true">Regresa a la Página 1</a>
 			</article>
 			<div data-role="footer" data-position="fixed"> 
-	            <h4>CopyRight@ by MorisMuñoz</h4> 
+	            <h4>CopyRight@ by MMMReyes</h4> 
            </div> 
 		</section>
 
 		<!-- ********************************************* FIN PAGINA 2************************************************ -->
+
+
+		<!-- *********************************************PAGINA 3************************************************ -->
+		
+		<section id="page3" data-role="page" data-poisition="fixed" data-theme="b">
+			
+			<header data-role="header">
+				<h1>Gaming Store 3</h1>
+			</header>
+			<article data-role="content">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto enim, sit labore optio ab omnis atque facere laborum dolorem aliquid accusamus qui, fuga nostrum voluptate! Eos reiciendis expedita minus ea!
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, quasi, quos aspernatur, nemo, molestiae natus asperiores libero aperiam laudantium reprehenderit sint sapiente quo ad aliquam necessitatibus doloribus debitis voluptas ut.
+				</p>
+				<a href="#page4" data-role="button" data-inline="true">Ir a la página 4</a>
+				<a href="#page2" data-role="button" data-inline="true">Regresar a la Página 2</a>
+			</article>
+			<div data-role="footer" data-position="fixed"> 
+	            <h4>CopyRight@ by MMMReyes</h4> 
+           </div> 
+		</section>
+
+		<!-- ********************************************* FIN PAGINA 3************************************************ -->
+
+
+        <!-- *********************************************PAGINA 4************************************************ -->
+		
+		<section id="page4" data-role="page" data-poisition="fixed" data-theme="b">
+			
+			<header data-role="header">
+				<h1>Gaming Store 4</h1>
+			</header>
+			<article data-role="content">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto enim, sit labore optio ab omnis atque facere laborum dolorem aliquid accusamus qui, fuga nostrum voluptate! Eos reiciendis expedita minus ea!
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, quasi, quos aspernatur, nemo, molestiae natus asperiores libero aperiam laudantium reprehenderit sint sapiente quo ad aliquam necessitatibus doloribus debitis voluptas ut.
+				</p>
+				<a href="#page5" data-role="button" data-inline="true">Ir a la página 5</a>
+				<a href="#page3" data-role="button" data-inline="true">Regresar a la Página 3</a>
+			</article>
+			<div data-role="footer" data-position="fixed"> 
+	            <h4>CopyRight@ by MMMReyes</h4> 
+           </div> 
+		</section>
+
+		<!-- ********************************************* FIN PAGINA 5************************************************ -->
+
+		<section id="page5" data-role="page" data-poisition="fixed" data-theme="b">
+			
+			<header data-role="header">
+				<h1>Gaming Store 5</h1>
+			</header>
+			<article data-role="content">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto enim, sit labore optio ab omnis atque facere laborum dolorem aliquid accusamus qui, fuga nostrum voluptate! Eos reiciendis expedita minus ea!
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, quasi, quos aspernatur, nemo, molestiae natus asperiores libero aperiam laudantium reprehenderit sint sapiente quo ad aliquam necessitatibus doloribus debitis voluptas ut.
+				</p>
+				<a href="#page4" data-role="button" data-inline="true">Regresar a la Página 4</a>
+				
+			</article>
+			<div data-role="footer" data-position="fixed"> 
+	            <h4>CopyRight@ by MMMReyes</h4> 
+           </div> 
+		</section>
+
+		<!-- ********************************************* FIN PAGINA 5************************************************ -->
+
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <!-- SmartMenus jQuery plugin -->
+  <script type="text/javascript" src="js/jquery.smartmenus.js"></script>
+
+  <!-- To Slider JS -->
+  <script src="js/sequence.js"></script>
+  <script src="js/sequence-theme.modern-slide-in.js"></script>  
+  <!-- Product view slider -->
+  <script type="text/javascript" src="js/jquery.simpleGallery.js"></script>
+  <script type="text/javascript" src="js/jquery.simpleLens.js"></script>
+  <!-- slick slider -->
+  <script type="text/javascript" src="js/slick.js"></script>
+  <!-- Price picker slider -->
+  <script type="text/javascript" src="js/nouislider.js"></script>
+  <!-- Custom js -->
+  <script src="resources/js/custom.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      var total=0;
+    $(".aa-add-card-btn").on("click",function(e){
+    e.preventDefault();
+    var _data = $(this).attr("data");
+    console.log(_data);
+    var jsonData = JSON.parse(_data);
+    if(jsonData.client!==null){
+        //ajax request.... 
+    $.ajax({
+      type: "POST",
+      url: 'http://pymesv.com/datos05w/gamestoreapi/agregar_carrito/lista',
+      data: {jsonData: jsonData},
+      dataType: "json",
+      success: function(data)
+      {
+		$('.error').html(data); 
+        //add too checkout
+		$(".aa-cartbox-summary ul").append('<li><a class="aa-cartbox-img" href="#"><img src="http://pymesv.com/datos05w/'+jsonData.imagen+'" alt="img">'+
+                          '</a>  <div class="aa-cartbox-info">'+
+                          '<h4><a href="#">'+jsonData.nombre+'</a></h4>'+
+                          '<p>1 x '+jsonData.precio+'</p>'+
+                        '</div>'+
+                      '</li>');
+    total=parseInt(total)+parseInt(jsonData.precio);
+    $('.aa-cartbox-total-price').text('$'+total);
+      },
+      error: function(data)
+      {
+		  $(".aa-cartbox-summary ul").append('<li><a class="aa-cartbox-img" href="#"><img src="http://pymesv.com/datos05w/'+jsonData.imagen+'" alt="img">'+
+                          '</a>  <div class="aa-cartbox-info">'+
+                          '<h4><a href="#">'+jsonData.nombre+'</a></h4>'+
+                          '<p>1 x '+jsonData.precio+'</p>'+
+                        '</div>'+
+                      '</li>');
+		$('.error').html(data);
+			console.log(data);
+        console.log("error");
+      }
+
+    });
+    }
+       
+    });
+
+    });
+  </script>
 
 
 

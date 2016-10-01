@@ -9,5 +9,6 @@ footer{
 
 section article a[href="#page2"]{
 	text-decoration: none;
-
+/*
+	color: blue;
 }
