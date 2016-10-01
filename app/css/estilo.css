@@ -1,4 +1,13 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
 footer{
 	margin-bottom: 0px;
 	background-attachment: red; 
+}
+
+section article a[href="#page2"]{
+	text-decoration: none;
+
 }
