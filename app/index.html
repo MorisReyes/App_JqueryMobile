@@ -26,7 +26,7 @@
 		<section id="page1" data-role="page" data-poisition="fixed" data-theme="b">
 	
 			<header data-role="header">
-				<h1>Gaming Store 1</h1>
+				<h1>Cátalogo de Juegos</h1>
 			</header>
 				
 
@@ -74,12 +74,29 @@
 		<section id="page2" data-role="page" data-poisition="fixed" data-theme="b">
 			
 			<header data-role="header">
-				<h1>Gaming Store 2</h1>
+				<h1>Descripción de Juegos</h1>
 			</header>
 			<article data-role="content">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto enim, sit labore optio ab omnis atque facere laborum dolorem aliquid accusamus qui, fuga nostrum voluptate! Eos reiciendis expedita minus ea!
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, quasi, quos aspernatur, nemo, molestiae natus asperiores libero aperiam laudantium reprehenderit sint sapiente quo ad aliquam necessitatibus doloribus debitis voluptas ut.
-				</p>
+				 <?php
+                        
+                        foreach ($variable as $value) 
+                          {
+                  					
+                            echo '<!-- start single product item -->
+                                      <li>
+                                        <figure>
+                                          
+                                          <figcaption>
+                                            <h4 class="aa-product-title"><a href="#">'.$value->nombre.'</a></h4>
+                                            <p class="aa-product-descrip">'.$value->descripcion.'</p>
+                                            <a class="aa-product-img" href="#"><img style="width: 100px; height: 200px;" src="http://pymesv.com/datos05w/'.$value->imagen.'" alt="game cover img"></a>
+                                          </figcaption>
+                                        </figure>                         
+                                        <!-- product badge -->
+                                    
+                                      </li>';
+                          }
+                        ?>
 				<a href="#page3" data-role="button" data-inline="true">Ir a la página 3</a>
 				<a href="#page1" data-role="button" data-inline="true">Regresa a la Página 1</a>
 			</article>

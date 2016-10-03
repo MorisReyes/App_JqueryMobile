@@ -23,10 +23,14 @@
 
 	<!-- *********************************************PAGINA 1************************************************ -->
 		
-		<section id="page1" data-role="page" data-poisition="fixed" data-theme="b">
+		<section id="page1" data-role="page" data-poisition="fixed" data-theme="b" style="background:url('../imagenes/fondo5.jpg');color:white; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;">
 	
 			<header data-role="header">
-				<h1>Gaming Store 1</h1>
+				<h1>Cátalogo de Juegos</h1>
 			</header>
 				
 
@@ -42,12 +46,12 @@
                             echo '<!-- start single product item -->
                                       <li>
                                         <figure>
-                                          <a class="aa-product-img" href="#"><img style="width: 250px; height: 300px;" src="http://pymesv.com/datos05w/'.$value->imagen.'" alt="game cover img"></a>
+                                          <a class="aa-product-img" href="#"><img style="width: 150px; height: 300px;" src="http://pymesv.com/datos05w/'.$value->imagen.'" alt="game cover img"></a>
                                           <a class="aa-add-card-btn"href="javascript:void();" data="'.htmlspecialchars(json_encode($value), ENT_QUOTES, 'UTF-8'). '"><span class="fa fa-shopping-cart"></span>Agregar al carrito</a>
                                           <figcaption>
                                             <h4 class="aa-product-title"><a href="#">'.$value->nombre.'</a></h4>
                                             <span class="aa-product-price">'.$value->precio.'</span>
-                                            <p class="aa-product-descrip">'.$value->descripcion.'</p>
+                                            
                                           </figcaption>
                                         </figure>                         
                                         <!-- product badge -->
@@ -71,17 +75,42 @@
 
 		<!-- *********************************************PAGINA 2************************************************ -->
 		
-		<section id="page2" data-role="page" data-poisition="fixed" data-theme="b">
+		<section id="page2" data-role="page" data-poisition="fixed" data-theme="b" style="background:url('../imagenes/fondo4.jpg');color:white; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;">
 			
 			<header data-role="header">
-				<h1>Gaming Store 2</h1>
+				<h1>Descripción de Juegos a Disposición</h1>
 			</header>
 			<article data-role="content">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto enim, sit labore optio ab omnis atque facere laborum dolorem aliquid accusamus qui, fuga nostrum voluptate! Eos reiciendis expedita minus ea!
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, quasi, quos aspernatur, nemo, molestiae natus asperiores libero aperiam laudantium reprehenderit sint sapiente quo ad aliquam necessitatibus doloribus debitis voluptas ut.
-				</p>
+				<div class="aa-product-catg-body">
+                       <ul class="aa-product-catg">
+                        <?php
+                        
+                        foreach ($variable as $value) 
+                          {
+                  					
+                            echo '<!-- start single product item -->
+                                      <li>
+                                        <figure>
+                                            <figcaption>
+                                            <h4 class="aa-product-title"><a href="#">'.$value->nombre.'</a></h4>
+                                            <p class="aa-product-descrip">'.$value->descripcion.'</p>
+                                            <a class="aa-product-img" href="#"><img style="width: 100px; height: 200px;" src="http://pymesv.com/datos05w/'.$value->imagen.'" alt="game cover img"></a>
+                                          
+                                          </figcaption>
+                                        </figure>                         
+                                        <!-- product badge -->
+                                        </li>';
+                          }
+                        ?>
+                </ul>
+              </div>
+        <a href="#page1" data-role="button" data-inline="true">Regresa a la Página 1</a>
 				<a href="#page3" data-role="button" data-inline="true">Ir a la página 3</a>
-				<a href="#page1" data-role="button" data-inline="true">Regresa a la Página 1</a>
+				
 			</article>
 			<div data-role="footer" data-position="fixed"> 
 	            <h4>CopyRight@ by MMMReyes</h4> 
@@ -93,21 +122,29 @@
 
 		<!-- *********************************************PAGINA 3************************************************ -->
 		
-		<section id="page3" data-role="page" data-poisition="fixed" data-theme="b">
+		<section id="page3" data-role="page" data-poisition="fixed" data-theme="b" style="background:url('../imagenes/fondo3.jpg');color:white;">
 			
 			<header data-role="header">
-				<h1>Gaming Store 3</h1>
+				<h1>Misión</h1>
 			</header>
 			<article data-role="content">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto enim, sit labore optio ab omnis atque facere laborum dolorem aliquid accusamus qui, fuga nostrum voluptate! Eos reiciendis expedita minus ea!
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, quasi, quos aspernatur, nemo, molestiae natus asperiores libero aperiam laudantium reprehenderit sint sapiente quo ad aliquam necessitatibus doloribus debitis voluptas ut.
-				</p>
-				<a href="#page4" data-role="button" data-inline="true">Ir a la página 4</a>
-				<a href="#page2" data-role="button" data-inline="true">Regresar a la Página 2</a>
-			</article>
+        <br>
+        <br>
+        <br>
+     <p>Nuestra Misión:
+      Satisfacer las necesidades de las personas interesadas en los videojuegos y articulos de novedad, 
+      prestandoles el mejor servicio por parte de todo el personal de la empresa, y manteniendo siempre 
+      actualizado nuestro catálogo de juegos y articulos para las diferentes plataformas.</p>
+      <br>
+      <br>
+      <br>
+			<a href="#page2" data-role="button" data-inline="true">Regresar a la Página 2</a>
+      <a href="#page4" data-role="button" data-inline="true">Ir a la página 4</a>
+			
+		</article>
 			<div data-role="footer" data-position="fixed"> 
 	            <h4>CopyRight@ by MMMReyes</h4> 
-           </div> 
+      </div> 
 		</section>
 
 		<!-- ********************************************* FIN PAGINA 3************************************************ -->
@@ -115,17 +152,21 @@
 
         <!-- *********************************************PAGINA 4************************************************ -->
 		
-		<section id="page4" data-role="page" data-poisition="fixed" data-theme="b">
+		<section id="page4" data-role="page" data-poisition="fixed" data-theme="b" style="background:url('../imagenes/fondo2.jpg');color:white;">
 			
 			<header data-role="header">
-				<h1>Gaming Store 4</h1>
+				<h1>Visión</h1>
 			</header>
 			<article data-role="content">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto enim, sit labore optio ab omnis atque facere laborum dolorem aliquid accusamus qui, fuga nostrum voluptate! Eos reiciendis expedita minus ea!
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, quasi, quos aspernatur, nemo, molestiae natus asperiores libero aperiam laudantium reprehenderit sint sapiente quo ad aliquam necessitatibus doloribus debitis voluptas ut.
+        <br>
+        <br>
+        <br>
+				<p>Llegar a más lugares de la república mexicana e incluso a diferentes partes del mundo, con el mejor servicio a clientes, con los juegos y artículos más nuevos y actualizados y principalmente con la mejor comodidad y seguridad del mundo.
 				</p>
+        <br>
+        <a href="#page3" data-role="button" data-inline="true">Regresar a la Página 3</a>
 				<a href="#page5" data-role="button" data-inline="true">Ir a la página 5</a>
-				<a href="#page3" data-role="button" data-inline="true">Regresar a la Página 3</a>
+				
 			</article>
 			<div data-role="footer" data-position="fixed"> 
 	            <h4>CopyRight@ by MMMReyes</h4> 
@@ -134,16 +175,28 @@
 
 		<!-- ********************************************* FIN PAGINA 5************************************************ -->
 
-		<section id="page5" data-role="page" data-poisition="fixed" data-theme="b">
+		<section id="page5" data-role="page" data-poisition="fixed" data-theme="b" style="background:url('../imagenes/fondo1.jpg');color:white;">
 			
 			<header data-role="header">
-				<h1>Gaming Store 5</h1>
+				<h1>Valores</h1>
 			</header>
 			<article data-role="content">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto enim, sit labore optio ab omnis atque facere laborum dolorem aliquid accusamus qui, fuga nostrum voluptate! Eos reiciendis expedita minus ea!
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, quasi, quos aspernatur, nemo, molestiae natus asperiores libero aperiam laudantium reprehenderit sint sapiente quo ad aliquam necessitatibus doloribus debitis voluptas ut.
-				</p>
-				<a href="#page4" data-role="button" data-inline="true">Regresar a la Página 4</a>
+        <br>
+        <br>
+				<p>
+          RESPETO: Buscamos constantemente mantener la armonía en la relación con compañeros de trabajo, clientes y proveedores. </p>
+          <br>
+          <p>LEALTAD: Tenemos un fuerte compromiso y mostramos fidelidad. Hacemos con respeto nuestras responsabilidades y manifestamos confidencialidad en los aconteceres de la Organización.</p>
+          <br> 
+          <p>HONESTIDAD: Siendo íntegros para recibir a cambio la confianza de clientes internos y externos. </p>
+          <br>
+          <p>RESPONSABILIDAD: Cumplimos de manera oportuna y precisa con las actividades propias de cada puesto para escalar y llegar a las metas fijadas.</p> 
+          <br>
+          <p>COMPROMISO: Nos dedicamos a llegar al objetivo establecido y cumplimos responsablemente con las actividades propias del puesto. </p>
+          <br>
+          <p>INNOVADOR: Promovemos el cambio permanente en nuestros procesos, productos y servicios como el medio más importante para estar cumpliendo las expectativas de nuestros clientes.</p>
+				  <br>
+        <a href="#page4" data-role="button" data-inline="true">Regresar a la Página 4</a>
 				
 			</article>
 			<div data-role="footer" data-position="fixed"> 
